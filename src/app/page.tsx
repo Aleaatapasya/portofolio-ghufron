@@ -5,7 +5,6 @@ import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import OrganizationSection from "@/components/OrganizationSection";
 import InternshipSection from "@/components/InternshipSection";
-import PartTimeSection from "@/components/PartTimeSection";
 import CertificateSection from "@/components/CertificateSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -19,14 +18,13 @@ export default function Home() {
       {/* Navigation Bar */}
       <Navbar />
 
-      {/* Main Sections following exact requested flow */}
+      {/* Main Sections */}
       <main className="flex-1 relative z-10">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <OrganizationSection />
         <InternshipSection />
-        <PartTimeSection />
         <CertificateSection />
         <ContactSection />
       </main>

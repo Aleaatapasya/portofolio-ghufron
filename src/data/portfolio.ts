@@ -29,15 +29,6 @@ export interface InternshipExperience {
   image?: string;
 }
 
-export interface PartTimeExperience {
-  id: number;
-  company: string;
-  role: string;
-  period: string;
-  responsibilities: string[];
-  image?: string;
-}
-
 export interface CertificateItem {
   id: number;
   title: string;
@@ -51,7 +42,6 @@ export const portfolioData = {
     name: "Muhammad Ghufron",
     nameAccent: "Arrozzaq",
     profession: "FINANCE & ADMINISTRATION",
-    year: "2026",
   },
   about: {
     greeting: "Halo, saya",
@@ -123,7 +113,7 @@ export const portfolioData = {
       organization: "DPM KEMA FKS",
       period: "Maret 2024 – Januari 2025",
       description: "Bertanggung jawab dalam mengawasi dan mengevaluasi kinerja beberapa departemen BEM, termasuk Departemen Dalam Negeri, Luar Negeri, dan Pengembangan Sumber Daya Mahasiswa.",
-      image: "/images/org_1.jpeg",
+      image: "/images/org_1.png",
     },
     {
       id: 2,
@@ -131,7 +121,7 @@ export const portfolioData = {
       organization: "KBAA",
       period: "April 2023 – April 2024",
       description: "Mendukung pelaksanaan latihan futsal serta menganalisis kemampuan dan daya saing 27 atlet untuk menunjang pengembangan kemampuan tim.",
-      image: "/images/org_2.jpeg",
+      image: "/images/org_2.png",
     },
     {
       id: 3,
@@ -139,7 +129,7 @@ export const portfolioData = {
       organization: "KBAA Championship",
       period: "Oktober 2023 – Desember 2023",
       description: "Memimpin delapan anggota divisi dalam mempersiapkan kebutuhan logistik, memastikan ketersediaan perlengkapan, dan mendukung keamanan selama acara berlangsung.",
-      image: "/images/org_3.jpeg",
+      image: "/images/org_3.png",
     },
     {
       id: 4,
@@ -147,16 +137,15 @@ export const portfolioData = {
       organization: "Kaderisasi Jurusan",
       period: "Agustus 2023 – Oktober 2023",
       description: "Menjadi penghubung antara panitia dan mahasiswa baru, mengelola absensi, serta mendampingi 21 mahasiswa selama kegiatan orientasi universitas.",
-      image: "/images/org_4.jpeg",
+      image: "/images/org_5.png",
     },
     {
       id: 5,
       role: "Staff Liaison Officer",
       organization: "PKKMB Universitas Telkom",
-      // Retained exactly as written in the source document as mandated
       period: "Agustus 2023 – Juli 2023",
       description: "Menjadi penghubung antara panitia dan mahasiswa baru, mengelola absensi, serta mendampingi 21 mahasiswa selama kegiatan orientasi universitas.",
-      image: "/images/org_5.jpeg",
+      image: "/images/org_4.png",
     },
   ],
   internships: [
@@ -171,7 +160,7 @@ export const portfolioData = {
         "Menganalisis kebutuhan pelanggan sebagai dasar dalam mengidentifikasi solusi konektivitas yang sesuai.",
         "Berkoordinasi dengan tim internal untuk mendukung kelancaran implementasi layanan dan pemenuhan kebutuhan pelanggan.",
       ],
-      image: "/images/internship_1.jpeg",
+      image: "/images/internship_1.png",
     },
     {
       id: 2,
@@ -184,43 +173,31 @@ export const portfolioData = {
         "Memvisualisasikan hasil analisis dalam bentuk tabel dan diagram untuk menyajikan informasi keuangan secara jelas dan sistematis.",
         "Menyusun hasil analisis keuangan secara terstruktur sebagai bahan pendukung evaluasi bisnis dan pengambilan keputusan perusahaan.",
       ],
-      image: "/images/internship_3.jpeg",
+      image: "/images/internship_2.png",
     },
   ],
-  partTime: {
-    id: 1,
-    company: "Space Basketball",
-    role: "Coach Basketball",
-    period: "Juni 2023 – April 2024",
-    responsibilities: [
-      "Membimbing anak-anak dalam mempelajari teknik dasar olahraga basket melalui latihan yang terarah dan sesuai dengan tahap perkembangan mereka.",
-      "Mengembangkan koordinasi gerak, keterampilan motorik, serta kemampuan dasar bermain basket melalui aktivitas latihan yang interaktif.",
-      "Menciptakan suasana latihan yang positif untuk mendorong kedisiplinan, kepercayaan diri, dan kerja sama anak.",
-    ],
-    images: ["/images/basketball_1.jpeg", "/images/basketball_2.jpeg"],
-  },
   certificates: [
     {
       id: 1,
-      title: "Microsoft Excel Mastery for Finance - Certificate of Completion",
+      title: "Microsoft Excel Mastery for Finance",
       issuer: "SmartPath (International Webinar)",
       image: "/images/cert_p9_1.png",
     },
     {
       id: 2,
-      title: "Business Analytics with Excel - Declaration of Completion",
+      title: "Business Analytics with Excel",
       issuer: "Simplilearn | SkillUp",
       image: "/images/cert_p9_2.png",
     },
     {
       id: 3,
-      title: "Data Analyst 101 - Declaration of Completion",
+      title: "Data Analyst 101",
       issuer: "Simplilearn | SkillUp",
       image: "/images/cert_p9_3.png",
     },
     {
       id: 4,
-      title: "Excel Dashboard for Beginners - Declaration of Completion",
+      title: "Excel Dashboard for Beginners",
       issuer: "Simplilearn | SkillUp",
       image: "/images/cert_p9_4.png",
     },
@@ -232,37 +209,37 @@ export const portfolioData = {
     },
     {
       id: 6,
-      title: "Menjadi Ahli Data Analytics Dengan Power BI",
-      issuer: "Udemy",
+      title: "Sertifikat Kompetensi - Data Management (Data Analyst)",
+      issuer: "Badan Nasional Sertifikasi Profesi (BNSP) & LSP Global",
       image: "/images/cert_p9_6.jpeg",
     },
     {
       id: 7,
-      title: "Sertifikat Praktik Kerja Lapangan Bidding & Transaction Support",
-      issuer: "PT Telkom Indonesia (Persero) Tbk",
+      title: "Menjadi Ahli Data Analytics Dengan Power BI",
+      issuer: "Udemy",
       image: "/images/cert_p9_7.jpeg",
     },
     {
       id: 8,
-      title: "Sertifikat Kompetensi - Data Management (Data Analyst)",
-      issuer: "Badan Nasional Sertifikasi Profesi (BNSP) & LSP Global",
-      image: "/images/cert_p9_8.jpeg",
+      title: "Sertifikat Magang - Bidding & Transaction Support",
+      issuer: "PT Telkom Indonesia (Persero) Tbk",
+      image: "/images/cert_p9_8.png",
     },
     {
       id: 9,
-      title: "Sertifikat Pembekalan 12+ Essential Skills - Social Influence",
-      issuer: "GNIK & Maganghub Kemnaker RI",
+      title: "Introduction Excel",
+      issuer: "Simplilearn | SkillUp",
       image: "/images/cert_p10_1.png",
     },
     {
       id: 10,
-      title: "Sertifikat Pembekalan 12+ Essential Skills - Digital Disruption & Transformation",
+      title: "Sertifikat Pembekalan 12+ Essential Skills - Integrity at Work",
       issuer: "GNIK & Maganghub Kemnaker RI",
       image: "/images/cert_p10_2.png",
     },
     {
       id: 11,
-      title: "Sertifikat Pembekalan 12+ Essential Skills - Emotional Intelligence",
+      title: "Sertifikat Pembekalan 12+ Essential Skills - Digital Literacy",
       issuer: "GNIK & Maganghub Kemnaker RI",
       image: "/images/cert_p10_3.png",
     },
@@ -274,19 +251,19 @@ export const portfolioData = {
     },
     {
       id: 13,
-      title: "Sertifikat Pembekalan 12+ Essential Skills - Digital Literacy",
+      title: "Sertifikat Pembekalan 12+ Essential Skills - Emotional Intelligence",
       issuer: "GNIK & Maganghub Kemnaker RI",
       image: "/images/cert_p10_5.png",
     },
     {
       id: 14,
-      title: "Introduction to MS Excel - Declaration of Completion",
-      issuer: "Simplilearn | SkillUp",
+      title: "Sertifikat Pembekalan 12+ Essential Skills - Digital Disruption & Transformation",
+      issuer: "GNIK & Maganghub Kemnaker RI",
       image: "/images/cert_p10_6.png",
     },
     {
       id: 15,
-      title: "Sertifikat Pembekalan 12+ Essential Skills - Integrity at Work",
+      title: "Sertifikat Pembekalan 12+ Essential Skills - Social Influence",
       issuer: "GNIK & Maganghub Kemnaker RI",
       image: "/images/cert_p10_7.png",
     },
@@ -308,4 +285,3 @@ export const portfolioData = {
     name: "M Ghufron Arrozzaq",
   },
 };
-

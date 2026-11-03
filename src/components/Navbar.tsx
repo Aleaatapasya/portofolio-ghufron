@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useTheme } from "@/context/ThemeContext";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Tentang Saya", href: "#tentang-saya" },
@@ -12,16 +11,14 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 10);
 
-      // Identify active section
       const sections = ["tentang-saya", "pengalaman", "sertifikat", "kontak"];
       const scrollPos = window.scrollY + 200;
 
@@ -39,6 +36,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -46,18 +44,18 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#03132D]/90 dark:bg-[#03132D]/90 light:bg-white/90 backdrop-blur-md shadow-lg shadow-black/10 border-b border-[#168BFF]/20"
-          : "bg-transparent border-b border-[#168BFF]/10"
+          ? "bg-[#03132D]/95 backdrop-blur-lg shadow-xl shadow-black/30 border-b border-[#168BFF]/30"
+          : "bg-[#03132D]/80 backdrop-blur-md border-b border-[#168BFF]/15"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Pojok kiri: M Ghufron Arrozzaq */}
         <a
           href="#"
-          className="text-lg sm:text-xl font-bold tracking-tight text-white dark:text-white transition-opacity hover:opacity-90 flex items-center gap-1.5"
+          className="text-lg sm:text-xl font-bold tracking-tight text-white transition-opacity hover:opacity-90 flex items-center gap-1.5"
         >
           <span className="font-extrabold text-white">M Ghufron</span>
-          <span className="text-[#168BFF] dark:text-[#29C4FF] font-semibold">Arrozzaq</span>
+          <span className="text-[#29C4FF] font-semibold">Arrozzaq</span>
         </a>
 
         {/* Bagian tengah hingga kanan: Desktop Navigation */}
@@ -70,8 +68,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`relative text-sm font-medium transition-colors py-1 ${
                   isActive
-                    ? "text-[#168BFF] dark:text-[#29C4FF]"
-                    : "text-[#B8C8DF] hover:text-white dark:text-[#B8C8DF] dark:hover:text-white"
+                    ? "text-[#29C4FF] font-semibold"
+                    : "text-[#B8C8DF] hover:text-white"
                 }`}
               >
                 {item.label}
@@ -83,26 +81,13 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Pojok paling kanan: Theme toggle & mobile menu trigger */}
-        <div className="flex items-center gap-3">
+        {/* Mobile menu trigger */}
+        <div className="flex md:hidden items-center">
           <button
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="p-2.5 rounded-full border border-[#168BFF]/30 bg-[#061E43]/60 dark:bg-[#061E43]/80 hover:bg-[#168BFF]/20 transition-all duration-200 text-[#29C4FF] hover:scale-105 active:scale-95"
-            title={theme === "dark" ? "Ganti ke Tema Terang" : "Ganti ke Tema Gelap"}
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-amber-300 transition-transform duration-300 rotate-0 hover:rotate-45" />
-            ) : (
-              <Moon className="w-5 h-5 text-[#0878DB] transition-transform duration-300" />
-            )}
-          </button>
-
-          {/* Hamburger menu for mobile */}
-          <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
-            className="md:hidden p-2.5 rounded-lg border border-[#168BFF]/30 text-white bg-[#061E43]/60 hover:bg-[#168BFF]/20 transition-colors"
+            className="p-2.5 rounded-lg border border-[#168BFF]/30 text-white bg-[#061E43]/60 hover:bg-[#168BFF]/20 transition-colors"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -111,7 +96,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#03132D] border-b border-[#168BFF]/20 px-6 py-5 shadow-2xl animate-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden bg-[#03132D] border-b border-[#168BFF]/20 px-6 py-5 shadow-2xl">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <a
@@ -129,4 +114,3 @@ export default function Navbar() {
     </header>
   );
 }
-

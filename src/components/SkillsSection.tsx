@@ -1,10 +1,6 @@
 import React from "react";
+import Image from "next/image";
 import {
-  FileSpreadsheet,
-  FileText,
-  Presentation,
-  LayoutGrid,
-  Palette,
   TrendingUp,
   BarChart3,
   Brain,
@@ -20,18 +16,63 @@ import { portfolioData } from "@/data/portfolio";
 export default function SkillsSection() {
   const { skills } = portfolioData;
 
-  const getHardSkillIcon = (iconName?: string) => {
+  const renderSkillIcon = (iconName?: string) => {
     switch (iconName) {
       case "excel":
-        return <FileSpreadsheet className="w-6 h-6 text-emerald-400" />;
+        return (
+          <div className="relative w-8 h-8">
+            <Image
+              src="/images/skills/excel.png"
+              alt="Excel Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+        );
       case "word":
-        return <FileText className="w-6 h-6 text-blue-400" />;
+        return (
+          <div className="relative w-8 h-8">
+            <Image
+              src="/images/skills/wordss.png"
+              alt="Word Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+        );
       case "powerpoint":
-        return <Presentation className="w-6 h-6 text-orange-400" />;
+        return (
+          <div className="relative w-8 h-8">
+            <Image
+              src="/images/skills/powerpoint.png"
+              alt="PowerPoint Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+        );
       case "google":
-        return <LayoutGrid className="w-6 h-6 text-amber-400" />;
+        return (
+          <div className="relative w-8 h-8 rounded-full overflow-hidden">
+            <Image
+              src="/images/skills/google_workspace.jpg"
+              alt="Google Workspace Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+        );
       case "canva":
-        return <Palette className="w-6 h-6 text-cyan-400" />;
+        return (
+          <div className="relative w-8 h-8 rounded-full overflow-hidden">
+            <Image
+              src="/images/skills/canva.png"
+              alt="Canva Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+        );
       case "financial":
         return <TrendingUp className="w-6 h-6 text-[#29C4FF]" />;
       case "data":
@@ -91,8 +132,8 @@ export default function SkillsSection() {
                   className="p-5 rounded-2xl bg-[#061E43]/70 hover:bg-[#061E43]/90 border border-[#168BFF]/25 hover:border-[#29C4FF]/60 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:shadow-[#168BFF]/15 group flex flex-col justify-between"
                 >
                   <div className="flex items-start gap-3.5 mb-3">
-                    <div className="w-11 h-11 rounded-xl bg-[#03132D] border border-[#168BFF]/30 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                      {getHardSkillIcon(skill.icon)}
+                    <div className="w-12 h-12 rounded-xl bg-[#03132D] border border-[#168BFF]/30 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md p-1.5">
+                      {renderSkillIcon(skill.icon)}
                     </div>
                     <div>
                       <h4 className="text-base font-bold text-white group-hover:text-[#29C4FF] transition-colors leading-snug">
@@ -144,4 +185,3 @@ export default function SkillsSection() {
     </section>
   );
 }
-

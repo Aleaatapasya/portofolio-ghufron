@@ -25,9 +25,7 @@ export default function Footer() {
           {footer.name}
         </p>
 
-        <p className="text-xs text-[#B8C8DF]/70 pt-4 font-mono">
-          © 2026 Muhammad Ghufron Arrozzaq. All rights reserved.
-        </p>
+
       </div>
     </footer>
   );

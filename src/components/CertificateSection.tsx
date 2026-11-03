@@ -2,70 +2,32 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X, ZoomIn, Award } from "lucide-react";
+import { X, ZoomIn, Award } from "lucide-react";
 import { portfolioData, CertificateItem } from "@/data/portfolio";
 
 export default function CertificateSection() {
   const { certificates } = portfolioData;
   const [selectedCert, setSelectedCert] = useState<CertificateItem | null>(null);
-  const [startIndex, setStartIndex] = useState(0);
-
-  // We display items in sets for the carousel navigation
-  const visibleCount = 4;
-  const maxIndex = Math.max(0, certificates.length - visibleCount);
-
-  const handlePrev = () => {
-    setStartIndex((prev) => Math.max(0, prev - 1));
-  };
-
-  const handleNext = () => {
-    setStartIndex((prev) => Math.min(maxIndex, prev + 1));
-  };
 
   return (
     <section id="sertifikat" className="py-20 md:py-28 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with Carousel Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-          <div className="flex items-center gap-3">
-            <div className="w-1.5 h-8 bg-gradient-to-b from-[#168BFF] to-[#29C4FF] rounded-full" />
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Sertifikat & Lisensi
-              </h2>
-              <p className="text-xs sm:text-sm text-[#B8C8DF] mt-1">
-                Kualifikasi resmi bidang Finance, Excel, Data Analytics & Profesional
-              </p>
-            </div>
-          </div>
-
-          {/* Desktop & Tablet Carousel Arrows */}
-          <div className="flex items-center gap-2 self-end sm:self-center">
-            <button
-              onClick={handlePrev}
-              disabled={startIndex === 0}
-              aria-label="Previous certificates"
-              className="p-2.5 rounded-full border border-[#168BFF]/30 bg-[#061E43]/80 hover:bg-[#168BFF]/20 text-[#29C4FF] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <span className="text-xs font-mono text-[#B8C8DF] px-2">
-              {startIndex + 1} - {Math.min(startIndex + visibleCount, certificates.length)} / {certificates.length}
-            </span>
-            <button
-              onClick={handleNext}
-              disabled={startIndex >= maxIndex}
-              aria-label="Next certificates"
-              className="p-2.5 rounded-full border border-[#168BFF]/30 bg-[#061E43]/80 hover:bg-[#168BFF]/20 text-[#29C4FF] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+        {/* Section Header */}
+        <div className="flex items-center gap-3 mb-10">
+          <div className="w-1.5 h-8 bg-gradient-to-b from-[#168BFF] to-[#29C4FF] rounded-full" />
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Sertifikat & Lisensi
+            </h2>
+            <p className="text-xs sm:text-sm text-[#B8C8DF] mt-1">
+              Menampilkan seluruh 16 sertifikat kualifikasi resmi (Finance, Excel, Data Analytics & Profesional)
+            </p>
           </div>
         </div>
 
-        {/* Certificate Grid - 4 Kolom di Desktop menyerupai referensi gambar */}
+        {/* Certificate Grid — Menampilkan seluruh 16 sertifikat */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {certificates.slice(startIndex, startIndex + visibleCount).map((cert) => (
+          {certificates.map((cert) => (
             <div
               key={cert.id}
               onClick={() => setSelectedCert(cert)}
@@ -103,20 +65,6 @@ export default function CertificateSection() {
             </div>
           ))}
         </div>
-
-        {/* Mobile quick scroll pill helper */}
-        <div className="mt-6 flex justify-center gap-1.5 sm:hidden">
-          {Array.from({ length: Math.ceil(certificates.length / 2) }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setStartIndex(Math.min(i * 2, maxIndex))}
-              className={`h-1.5 rounded-full transition-all ${
-                Math.floor(startIndex / 2) === i ? "w-6 bg-[#29C4FF]" : "w-1.5 bg-white/20"
-              }`}
-              aria-label={`Slide ${i + 1}`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Lightbox Modal */}
@@ -132,7 +80,7 @@ export default function CertificateSection() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedCert(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-[#061E43] hover:bg-[#168BFF] text-white transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-[#061E43] hover:bg-[#168BFF] text-white transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-6 h-6" />
@@ -166,4 +114,3 @@ export default function CertificateSection() {
     </section>
   );
 }
-

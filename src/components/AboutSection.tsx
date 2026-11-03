@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { GraduationCap, Award, CheckCircle } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 export default function AboutSection() {
@@ -43,7 +43,6 @@ export default function AboutSection() {
                     <p className="text-sm text-[#B8C8DF] font-medium flex items-center gap-2 mt-0.5">
                       <span>{about.education.institution}</span>
                       <span className="inline-block w-1 h-1 rounded-full bg-[#168BFF]" />
-                      <span className="text-emerald-400 font-semibold">Lulusan Terbaik</span>
                     </p>
                   </div>
                 </div>
@@ -58,57 +57,25 @@ export default function AboutSection() {
                 </div>
               </div>
             </div>
-
-            {/* Quick highlight pillars */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-xl bg-[#061E43]/40 border border-[#168BFF]/20 flex items-center gap-2.5">
-                <CheckCircle className="w-4 h-4 text-[#29C4FF] shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-[#B8C8DF]">Financial Analysis</span>
-              </div>
-              <div className="p-3.5 rounded-xl bg-[#061E43]/40 border border-[#168BFF]/20 flex items-center gap-2.5">
-                <CheckCircle className="w-4 h-4 text-[#29C4FF] shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-[#B8C8DF]">Business Operations</span>
-              </div>
-              <div className="p-3.5 rounded-xl bg-[#061E43]/40 border border-[#168BFF]/20 flex items-center gap-2.5 col-span-2 sm:col-span-1">
-                <CheckCircle className="w-4 h-4 text-[#29C4FF] shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-[#B8C8DF]">Project Management</span>
-              </div>
-            </div>
           </div>
 
-          {/* Kolom kanan: Foto formal asli Muhammad Ghufron Arrozzaq */}
+          {/* Kolom kanan: Foto formal Muhammad Ghufron Arrozzaq bersih tanpa tulisan di bawah */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-sm sm:max-w-md">
               {/* Outer decorative glowing ring */}
-              <div className="absolute -inset-1.5 bg-gradient-to-b from-[#168BFF] via-[#29C4FF]/50 to-transparent rounded-3xl blur-md opacity-70 group-hover:opacity-100 transition duration-500" />
-              
+              <div className="absolute -inset-1.5 bg-gradient-to-b from-[#168BFF] via-[#29C4FF]/40 to-transparent rounded-3xl blur-md opacity-70 group-hover:opacity-100 transition duration-500" />
+
               <div className="relative rounded-3xl overflow-hidden bg-[#061E43] border-2 border-[#168BFF]/40 shadow-2xl">
                 <div className="aspect-[3/4] relative w-full">
                   <Image
                     src={about.photo}
                     alt={about.fullName}
                     fill
-                    sizes="(max-width: 768px) 100vw, 400px"
+                    sizes="(max-width: 768px) 100vw, 420px"
                     className="object-cover object-top hover:scale-105 transition-transform duration-500"
                     priority
                   />
-                  {/* Subtle dark gradient overlay at the bottom for readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#03132D] via-transparent to-transparent opacity-80" />
-                </div>
-
-                {/* Bottom Card Identity Label inside frame */}
-                <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-[#03132D]/90 backdrop-blur-md border border-[#168BFF]/30 flex items-center justify-between">
-                  <div>
-                    <h4 className="text-sm font-bold text-white">
-                      Muhammad Ghufron Arrozzaq
-                    </h4>
-                    <p className="text-xs text-[#29C4FF] font-medium">
-                      Finance & Administration Specialist
-                    </p>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-[#168BFF]/20 border border-[#168BFF]/40 flex items-center justify-center text-[#29C4FF]">
-                    <Award className="w-4 h-4" />
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#03132D]/40 via-transparent to-transparent" />
                 </div>
               </div>
 
@@ -121,4 +88,3 @@ export default function AboutSection() {
     </section>
   );
 }
-

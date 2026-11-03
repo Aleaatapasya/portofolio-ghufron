@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useSyncExternalStore } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 type Theme = "dark" | "light";
 
@@ -11,39 +11,37 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-function subscribe(callback: () => void) {
-  window.addEventListener("storage", callback);
-  return () => window.removeEventListener("storage", callback);
-}
-
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
-  const saved = localStorage.getItem("portfolio_theme") as Theme | null;
-  return saved === "light" || saved === "dark" ? saved : "dark";
-}
-
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
-  const isClient = useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false
-  );
+  const [theme, setTheme] = useState<Theme>("dark");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("portfolio_theme") as Theme | null;
+    if (saved === "light" || saved === "dark") {
+      setTheme(saved);
+      if (saved === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("portfolio_theme", nextTheme);
-      document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    localStorage.setItem("portfolio_theme", nextTheme);
+    if (nextTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={isClient && theme === "dark" ? "dark" : ""}>
-        {children}
-      </div>
+      {children}
     </ThemeContext.Provider>
   );
 }

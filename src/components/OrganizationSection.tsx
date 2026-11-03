@@ -28,9 +28,7 @@ export default function OrganizationSection() {
           <div className="lg:col-span-7 flex flex-col justify-between">
             <div className="text-xs text-[#29C4FF] font-semibold uppercase tracking-wider mb-3 flex items-center justify-between">
               <span>Daftar Pengalaman Organisasi</span>
-              <span className="text-xs text-[#B8C8DF] font-normal italic">
-                (Klik item untuk melihat dokumentasi)
-              </span>
+
             </div>
 
             {/* Scrollable list matching the height of the right photo card */}
@@ -41,20 +39,18 @@ export default function OrganizationSection() {
                   <div
                     key={org.id}
                     onClick={() => setActiveOrgId(org.id)}
-                    className={`cursor-pointer p-4 rounded-2xl transition-all duration-300 border text-left ${
-                      isActive
-                        ? "bg-[#061E43] border-[#29C4FF] shadow-lg shadow-[#168BFF]/20"
-                        : "bg-[#061E43]/40 border-[#168BFF]/20 hover:border-[#168BFF]/50 hover:bg-[#061E43]/60"
-                    }`}
+                    className={`cursor-pointer p-4 rounded-2xl transition-all duration-300 border text-left ${isActive
+                      ? "bg-[#061E43] border-[#29C4FF] shadow-lg shadow-[#168BFF]/20"
+                      : "bg-[#061E43]/40 border-[#168BFF]/20 hover:border-[#168BFF]/50 hover:bg-[#061E43]/60"
+                      }`}
                   >
                     <div className="flex items-start gap-3.5">
                       {/* Nomor urut dalam lingkaran biru */}
                       <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${
-                          isActive
-                            ? "bg-gradient-to-br from-[#168BFF] to-[#29C4FF] text-white shadow-md shadow-[#168BFF]/50"
-                            : "bg-[#03132D] text-[#29C4FF] border border-[#168BFF]/40"
-                        }`}
+                        className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${isActive
+                          ? "bg-gradient-to-br from-[#168BFF] to-[#29C4FF] text-white shadow-md shadow-[#168BFF]/50"
+                          : "bg-[#03132D] text-[#29C4FF] border border-[#168BFF]/40"
+                          }`}
                       >
                         {org.id}
                       </div>
@@ -79,9 +75,8 @@ export default function OrganizationSection() {
 
                       <div className="self-center pl-2 hidden sm:block">
                         <ChevronRight
-                          className={`w-5 h-5 transition-transform ${
-                            isActive ? "text-[#29C4FF] translate-x-1" : "text-white/20"
-                          }`}
+                          className={`w-5 h-5 transition-transform ${isActive ? "text-[#29C4FF] translate-x-1" : "text-white/20"
+                            }`}
                         />
                       </div>
                     </div>
