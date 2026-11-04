@@ -149,31 +149,33 @@ export const portfolioData = {
     },
   ],
   internships: [
+
     {
       id: 1,
-      company: "PT Telkom Indonesia",
-      division: "Digital Connectivity Service",
-      period: "Juli 2024 – September 2024",
-      responsibilities: [
-        "Mendukung pengembangan dan pemantauan layanan infrastruktur digital bagi pelanggan korporasi.",
-        "Melakukan evaluasi kinerja layanan Digital Connectivity Service untuk mendukung efektivitas operasional perusahaan.",
-        "Menganalisis kebutuhan pelanggan sebagai dasar dalam mengidentifikasi solusi konektivitas yang sesuai.",
-        "Berkoordinasi dengan tim internal untuk mendukung kelancaran implementasi layanan dan pemenuhan kebutuhan pelanggan.",
-      ],
-      image: "/images/internship_1.png",
-    },
-    {
-      id: 2,
       company: "PT Telkom Indonesia",
       division: "Bidding Transaction Support",
       period: "Juni 2025 – Agustus 2025",
       responsibilities: [
-        "Melakukan analisis laporan keuangan pelanggan menggunakan Microsoft Excel untuk memperoleh gambaran kondisi finansial perusahaan.",
-        "Mengolah data keuangan dan menghitung rasio keuangan sebagai dasar evaluasi kelayakan finansial pelanggan.",
-        "Memvisualisasikan hasil analisis dalam bentuk tabel dan diagram untuk menyajikan informasi keuangan secara jelas dan sistematis.",
-        "Menyusun hasil analisis keuangan secara terstruktur sebagai bahan pendukung evaluasi bisnis dan pengambilan keputusan perusahaan.",
+        "Mendukung kegiatan Revenue Assurance pada layanan Badan Usaha Milik Negara (BUMN), termasuk administrasi transaksi dan dokumentasi.",
+        "Mengolah dan memvalidasi data untuk memastikan keakuratan sebelum dimasukkan ke dalam laporan.",
+        "Menganalisis data 530 pelanggan PT Telkom untuk menilai kemampuan pembayaran serta mendukung penyusunan laporan Revenue Assurance.",
+        "Berkoordinasi dengan berbagai tim terkait untuk menindaklanjuti kebutuhan dokumen dan operasional.",
       ],
       image: "/images/internship_2.png",
+    },
+    {
+      id: 2,
+      company: "PT Telkom Indonesia",
+      division: "Digital Connectivity Service",
+      period: "Juli 2024 – September 2024",
+      responsibilities: [
+        "Mendukung pengembangan dan pemantauan layanan Enterprise Digital Connectivity, dengan fokus pada solusi infrastruktur digital bagi pelanggan korporasi.",
+        "Mengolah dan mengorganisir data 20 produk konektivitas Enterprise, termasuk pengelompokan produk, konsolidasi informasi layanan, serta rekapitulasi data menggunakan Microsoft Excel.",
+        "Membantu mengevaluasi kinerja layanan Digital Connectivity untuk mendukung efektivitas operasional dan kualitas layanan.",
+        "Menganalisis informasi produk Enterprise untuk mengidentifikasi kebutuhan pelanggan dan mendukung penyediaan solusi konektivitas yang sesuai.",
+        "Menyusun rangkuman dan laporan bulanan untuk mendukung pemantauan kinerja produk, evaluasi data, serta pengambilan keputusan operasional."
+      ],
+      image: "/images/internship_1.png",
     },
   ],
   certificates: [

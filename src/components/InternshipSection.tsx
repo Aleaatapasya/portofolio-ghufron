@@ -10,7 +10,7 @@ export default function InternshipSection() {
   const [selectedDoc, setSelectedDoc] = useState<InternshipExperience | null>(null);
 
   return (
-    <section className="py-16 md:py-24 relative">
+    <section id="pengalaman" className="py-16 md:py-24 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
@@ -31,18 +31,18 @@ export default function InternshipSection() {
             >
               <div>
                 {/* Header Card */}
-                <div className="flex items-start justify-between gap-4 mb-4 pb-4 border-b border-[#168BFF]/20">
-                  <div>
-                    <span className="text-xs font-mono uppercase tracking-widest text-[#29C4FF] font-semibold">
-                      Magang {internship.id} — {internship.company}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 mb-4 pb-4 border-b border-[#168BFF]/20">
+                  <div className="flex-1">
+                    <span className="text-xs font-mono uppercase tracking-widest text-[#29C4FF] font-semibold block">
+                      Magang — {internship.company}
                     </span>
                     <h3 className="text-xl font-bold text-white mt-1 group-hover:text-[#29C4FF] transition-colors">
                       {internship.division}
                     </h3>
                   </div>
 
-                  <div className="px-3 py-1 rounded-lg bg-[#168BFF]/15 border border-[#168BFF]/30 text-xs font-mono text-[#29C4FF] shrink-0 flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
+                  <div className="self-start sm:self-auto px-3 py-1.5 rounded-lg bg-[#168BFF]/15 border border-[#168BFF]/30 text-xs font-mono text-[#29C4FF] shrink-0 flex items-center gap-1.5 w-fit">
+                    <Calendar className="w-3.5 h-3.5 shrink-0" />
                     <span>{internship.period}</span>
                   </div>
                 </div>
