@@ -122,7 +122,6 @@ export default function SkillsSection() {
               <h3 className="text-sm uppercase tracking-wider font-semibold text-[#29C4FF]">
                 Hard Skills & Technical Competencies
               </h3>
-              <span className="text-xs text-[#B8C8DF] font-mono">8 Keterampilan Teruji</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -139,9 +138,7 @@ export default function SkillsSection() {
                       <h4 className="text-base font-bold text-white group-hover:text-[#29C4FF] transition-colors leading-snug">
                         {skill.name}
                       </h4>
-                      <span className="text-[11px] font-mono text-[#29C4FF]/90 font-medium">
-                        Proficient
-                      </span>
+
                     </div>
                   </div>
 
@@ -159,7 +156,7 @@ export default function SkillsSection() {
               <h3 className="text-sm uppercase tracking-wider font-semibold text-[#29C4FF]">
                 Soft Skills
               </h3>
-              <span className="text-xs text-[#B8C8DF] font-mono">Karakter Profesional</span>
+
             </div>
 
             <div className="flex-1 p-6 rounded-2xl bg-gradient-to-b from-[#061E43]/80 to-[#03132D]/90 border border-[#168BFF]/30 backdrop-blur-sm flex flex-col justify-around gap-4 shadow-xl">
