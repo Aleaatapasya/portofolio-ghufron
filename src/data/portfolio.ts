@@ -105,6 +105,11 @@ export const portfolioData = {
       { name: "Adaptability", icon: "refresh" },
       { name: "Leadership", icon: "user-check" },
     ],
+    languages: [
+      { name: "Bahasa Indonesia", level: "Fasih", proficiency: 100 },
+      { name: "Bahasa Arab", level: "Fasih", proficiency: 100 },
+      { name: "Bahasa Inggris", level: "Dasar", proficiency: 50 },
+    ],
   },
   organizations: [
     {

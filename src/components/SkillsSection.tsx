@@ -10,6 +10,7 @@ import {
   Clock,
   RefreshCw,
   UserCheck,
+  Languages,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
@@ -33,7 +34,7 @@ export default function SkillsSection() {
         return (
           <div className="relative w-8 h-8">
             <Image
-              src="/images/skills/wordss.png"
+              src="/images/skills/word.png"
               alt="Word Logo"
               fill
               className="object-contain"
@@ -87,19 +88,19 @@ export default function SkillsSection() {
   const getSoftSkillIcon = (iconName?: string) => {
     switch (iconName) {
       case "message":
-        return <MessageSquare className="w-5 h-5 text-[#29C4FF]" />;
+        return <MessageSquare className="w-4 h-4 text-[#29C4FF]" />;
       case "users":
-        return <Users className="w-5 h-5 text-[#29C4FF]" />;
+        return <Users className="w-4 h-4 text-[#29C4FF]" />;
       case "lightbulb":
-        return <Lightbulb className="w-5 h-5 text-[#29C4FF]" />;
+        return <Lightbulb className="w-4 h-4 text-[#29C4FF]" />;
       case "clock":
-        return <Clock className="w-5 h-5 text-[#29C4FF]" />;
+        return <Clock className="w-4 h-4 text-[#29C4FF]" />;
       case "refresh":
-        return <RefreshCw className="w-5 h-5 text-[#29C4FF]" />;
+        return <RefreshCw className="w-4 h-4 text-[#29C4FF]" />;
       case "user-check":
-        return <UserCheck className="w-5 h-5 text-[#29C4FF]" />;
+        return <UserCheck className="w-4 h-4 text-[#29C4FF]" />;
       default:
-        return <Lightbulb className="w-5 h-5 text-[#29C4FF]" />;
+        return <Lightbulb className="w-4 h-4 text-[#29C4FF]" />;
     }
   };
 
@@ -114,11 +115,11 @@ export default function SkillsSection() {
           </h2>
         </div>
 
-        {/* Layout: Main grid for Hard Skills + Side bar for Soft Skills */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Layout: Main grid for Hard Skills + Side bar for Soft Skills & Languages */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Main Area: Hard Skills (8 Cards) */}
-          <div className="lg:col-span-8">
-            <div className="mb-4 flex items-center justify-between">
+          <div className="lg:col-span-8 flex flex-col justify-between">
+            <div className="mb-4">
               <h3 className="text-sm uppercase tracking-wider font-semibold text-[#29C4FF]">
                 Hard Skills & Technical Competencies
               </h3>
@@ -138,7 +139,6 @@ export default function SkillsSection() {
                       <h4 className="text-base font-bold text-white group-hover:text-[#29C4FF] transition-colors leading-snug">
                         {skill.name}
                       </h4>
-
                     </div>
                   </div>
 
@@ -150,31 +150,62 @@ export default function SkillsSection() {
             </div>
           </div>
 
-          {/* Samping: Soft Skills dalam daftar vertikal */}
-          <div className="lg:col-span-4 flex flex-col">
-            <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-sm uppercase tracking-wider font-semibold text-[#29C4FF]">
-                Soft Skills
-              </h3>
+          {/* Samping: Soft Skills + Language Skills (Sejajar tinggi dengan Hard Skills) */}
+          <div className="lg:col-span-4 flex flex-col justify-between space-y-6 lg:space-y-0">
+            {/* Soft Skills Section */}
+            <div className="flex-1 flex flex-col mb-4">
+              <div className="mb-4">
+                <h3 className="text-sm uppercase tracking-wider font-semibold text-[#29C4FF]">
+                  Soft Skills
+                </h3>
+              </div>
 
+              <div className="flex-1 p-5 rounded-2xl bg-gradient-to-b from-[#061E43]/80 to-[#03132D]/90 border border-[#168BFF]/30 backdrop-blur-sm shadow-xl flex flex-col justify-around gap-2.5">
+                {skills.soft.map((item, index) => (
+                  <div
+                    key={index}
+                    className="py-2.5 px-3.5 rounded-xl bg-[#03132D]/70 border border-[#168BFF]/20 hover:border-[#29C4FF]/40 transition-colors flex items-center gap-3 group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#061E43] border border-[#168BFF]/30 flex items-center justify-center shrink-0 group-hover:bg-[#168BFF]/20 transition-colors">
+                      {getSoftSkillIcon(item.icon)}
+                    </div>
+                    <div>
+                      <h5 className="text-sm font-semibold text-white group-hover:text-[#29C4FF] transition-colors">
+                        {item.name}
+                      </h5>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="flex-1 p-6 rounded-2xl bg-gradient-to-b from-[#061E43]/80 to-[#03132D]/90 border border-[#168BFF]/30 backdrop-blur-sm flex flex-col justify-around gap-4 shadow-xl">
-              {skills.soft.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-3.5 rounded-xl bg-[#03132D]/80 border border-[#168BFF]/20 hover:border-[#29C4FF]/40 transition-colors flex items-center gap-3.5 group"
-                >
-                  <div className="w-9 h-9 rounded-lg bg-[#061E43] border border-[#168BFF]/30 flex items-center justify-center shrink-0 group-hover:bg-[#168BFF]/20 transition-colors">
-                    {getSoftSkillIcon(item.icon)}
+            {/* Language Skills Section */}
+            <div>
+              <div className="mb-3 flex items-center gap-2">
+                <Languages className="w-4 h-4 text-[#29C4FF]" />
+                <h3 className="text-sm uppercase tracking-wider font-semibold text-[#29C4FF]">
+                  Language Skills
+                </h3>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-gradient-to-b from-[#061E43]/80 to-[#03132D]/90 border border-[#168BFF]/30 backdrop-blur-sm shadow-xl space-y-2.5">
+                {skills.languages?.map((lang, index) => (
+                  <div
+                    key={index}
+                    className="p-3 rounded-xl bg-[#03132D]/70 border border-[#168BFF]/20 flex items-center justify-between group hover:border-[#29C4FF]/40 transition-colors"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-2 h-2 rounded-full bg-[#29C4FF]" />
+                      <span className="text-sm font-semibold text-white">
+                        {lang.name}
+                      </span>
+                    </div>
+                    <span className="text-xs font-mono font-medium px-2.5 py-0.5 rounded-full bg-[#168BFF]/20 text-[#29C4FF] border border-[#29C4FF]/30">
+                      {lang.level}
+                    </span>
                   </div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-white group-hover:text-[#29C4FF] transition-colors">
-                      {item.name}
-                    </h5>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
